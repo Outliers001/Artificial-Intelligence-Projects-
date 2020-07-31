@@ -1,0 +1,14 @@
+apiVersion: serving.kubeflow.org/v1alpha2
+kind: InferenceService
+metadata:
+  labels:
+    controller-tools.k8s.io: "1.0"
+  name: kfserving-breast-model
+  namespace: kubeflow
+spec:
+  default:
+    predictor:
+      custom:
+        container:
+          image: gcr.io/cohesive-gadget-166410/breast_cancer/custom_serving_nermodel:v1
+        
